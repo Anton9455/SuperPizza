@@ -1,0 +1,136 @@
+@import "./Color.scss";
+.App {
+  text-align: center;
+  .App-logo {
+    height: 10vmin;
+    pointer-events: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  .App-header {
+    background-color: $primary_main_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: $default;
+    padding-top: 5px;
+    .header {
+      flex-direction: initial;
+      justify-content: space-between;
+      padding: 0.5%;
+      @extend .App-header;
+      .header-logo {
+        display: flex;
+        justify-content: space-between;
+        width: 30%;
+        margin: 0.5% 5% 0.5% 0;
+      }
+      .header-sub-title {
+        display: flex;
+        align-items: center;
+        p {
+          margin: 0;
+        }
+        img {
+          width: 5vmin;
+          padding-right: 1%;
+        }
+      }
+    }
+  }
+  .App-body {
+    .App-tabs {
+      .tabs-logo {
+        width: 5vmin;
+      }
+    }
+    .App-cards {
+      display: flex;
+      box-sizing: border-box;
+      flex-flow: row;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      .card {
+        .cards-logo {
+          height: 15vmin;
+          width: 20vmin;
+
+          & + h1 {
+            margin-top: 0;
+          }
+        }
+
+        .flip-card {
+          background-color: transparent;
+          width: 300px;
+          height: 200px;
+          perspective: 1000px;
+          padding-bottom: 3%;
+
+          .flip-card-inner {
+            position: relative;
+            width: 90%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          }
+
+          &:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+
+          .flip-card-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            background-color: $default;
+            color: $alt_text;
+          }
+
+          .flip-card-back {
+            background-color: $primary_main_color;
+            color: $default;
+            transform: rotateY(180deg);
+            h2,
+            p {
+              margin: 0;
+              display: -webkit-box;
+              -webkit-line-clamp: 4;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              cursor: default;
+            }
+            button {
+              display: flex;
+              float: right;
+            }
+            @extend .flip-card-front;
+          }
+        }
+      }
+    }
+  }
+
+  .App-link {
+    color: #61dafb;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
