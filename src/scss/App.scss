@@ -44,6 +44,10 @@
   }
   .App-body {
     .App-tabs {
+      header {
+        position: sticky;
+        top: 0;
+      }
       .tabs-logo {
         width: 5vmin;
       }
@@ -111,8 +115,21 @@
               cursor: default;
             }
             button {
-              display: flex;
-              float: right;
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              margin: 5%;
+            }
+            button.removed {
+              left: 0;
+              @extend button;
+            }
+            .edit-buttons {
+              h3 {
+                position: absolute;
+                display: inline;
+                bottom: 0;
+              }
             }
             @extend .flip-card-front;
           }

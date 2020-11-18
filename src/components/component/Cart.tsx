@@ -25,7 +25,9 @@ export default function BasicTable(props: any) {
     const classes = useStyles();
     let rows: Array<any> = []
     props.pizza.forEach((value: any, key: number) => {
-        rows.push(createData(key, value.name, value.count))
+        if (value.count) {
+            rows.push(createData(key, value.name, value.count))
+        }
     })
     if (rows.length) {
         return (
