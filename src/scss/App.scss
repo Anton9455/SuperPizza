@@ -47,6 +47,7 @@
       header {
         position: sticky;
         top: 0;
+        border-radius: 30px;
       }
       .tabs-logo {
         width: 5vmin;
@@ -84,6 +85,7 @@
             transition: transform 0.6s;
             transform-style: preserve-3d;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
           }
 
           &:hover .flip-card-inner {
@@ -98,11 +100,13 @@
             backface-visibility: hidden;
             background-color: $default;
             color: $alt_text;
+            border-radius: 30px;
           }
 
           .flip-card-back {
             background-color: $primary_main_color;
             color: $default;
+            border-radius: 30px;
             transform: rotateY(180deg);
             h2,
             p {

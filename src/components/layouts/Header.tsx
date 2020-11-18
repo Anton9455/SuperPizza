@@ -12,12 +12,12 @@ function Header() {
           <div className="header">
             <div className="header-logo">
               <img src={pizza} className="App-logo" alt="pizza" />
-              <p>Супер пицца</p>
+              <h3>SuperPizza</h3>
             </div>
             <div className="header-sub-title">
               <img src={fire} className="App-sub-logo" alt="fire" />
               <p>
-                Единая служба спасения от голода в Костроме.
+                Сервис по борьбе с голодом
             </p>
             </div>
           </div>
